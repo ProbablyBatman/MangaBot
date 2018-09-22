@@ -124,9 +124,9 @@ async def grabber():
       print(submission.url)
       #check_valid_manga_name(submission.title.lower())
       for item in mangaList:
-        if (item in check_valid_manga_name(submission.title.lower()) and has_numbers(submission.title.lower()) and
-               'disc' in submission.title.lower() and not submission.hidden):
-        #if (item in submission.title.lower() and not submission.hidden and '[disc]' in submission.title.lower()):
+        #if (item in check_valid_manga_name(submission.title.lower()) and has_numbers(submission.title.lower()) and
+        #       'disc' in submission.title.lower() and not submission.hidden):
+        if (item in submission.title.lower() and not submission.hidden and '[disc]' in submission.title.lower()):
           #print(submission.title + " is valid")
           await bot.get_channel(477970394368704515).send('{}: {}'.format(submission.title, submission.url))
           submission.hide()
